@@ -95,7 +95,7 @@ const Booking = () => {
     }
 
     if (!formData.customerName || !formData.customerEmail) {
-      toast.error("Please enter your name and email");
+      toast.error("Please sign up to purchase a ticket");
       return;
     }
 
@@ -118,7 +118,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/bookings`, {
 
       if (!response.ok) throw new Error("Failed to create booking");
 
-      toast.success("Booking successful!");
+      toast.success("Booking successful, Thank you!");
       setFormData({ customerName: "", customerEmail: "" });
       setQuantity(1);
     } catch (error) {
